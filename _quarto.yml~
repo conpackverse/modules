@@ -23,7 +23,6 @@ book:
     - fileIO.qmd
     - fileManipulation.qmd
     - macGeneral/macDotFiles.qmd
-    - macGeneral/macVim.qmd
     - references.qmd
 format:
   html:

@@ -55,5 +55,8 @@
   },
   "tmux.qmd": {
     "tmux.html": "3c9168f1"
+  },
+  "macGeneral/macVim.qmd": {
+    "macVim.html": "47e6b2be"
   }
 }
