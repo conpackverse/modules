@@ -1,0 +1,59 @@
+{
+  "index.qmd": {
+    "index.html": "917fca6a"
+  },
+  "macSetupIntelFull.qmd": {
+    "macSetupIntelFull.html": "093af5ca"
+  },
+  "macSetupIntelMinimal.qmd": {
+    "macSetupIntelMinimal.html": "7897cd26"
+  },
+  "whyCLI.qmd": {
+    "whyCLI.html": "80b4b159"
+  },
+  "whyVIM.qmd": {
+    "whyVIM.html": "25277258"
+  },
+  "unixNature.qmd": {
+    "unixNature.html": "c3ac7bcc"
+  },
+  "man.qmd": {
+    "man.html": "a469cedb"
+  },
+  "bash.qmd": {
+    "bash.html": "eceb8cf3"
+  },
+  "bearings.qmd": {
+    "bearings.html": "8f30607b"
+  },
+  "fileIO.qmd": {
+    "fileIO.html": "dde12cb8"
+  },
+  "fileManipulation.qmd": {
+    "fileManipulation.html": "fb83172c"
+  },
+  "macDotFiles.qmd": {
+    "macDotFiles.html": "734e096d"
+  },
+  "references.qmd": {
+    "references.html": "ca30dac3"
+  },
+  "macSetupM1Full.qmd": {
+    "macSetupM1Full.html": "af440d95"
+  },
+  "macSetupM1Minimal.qmd": {
+    "macSetupM1Minimal.html": "b76b2f3d"
+  },
+  "terminal.qmd": {
+    "terminal.html": "5c5e8bff"
+  },
+  "macGeneral/iTerm.qmd": {
+    "iTerm.html": "4c046c27"
+  },
+  "macGeneral/macDotFiles.qmd": {
+    "macDotFiles.html": "5fc3154f"
+  },
+  "tmux.qmd": {
+    "tmux.html": "3c9168f1"
+  }
+}
