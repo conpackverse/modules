@@ -22,7 +22,9 @@ book:
     - bearings.qmd
     - fileIO.qmd
     - fileManipulation.qmd
+    - textManipulation.qmd
     - macGeneral/macDotFiles.qmd
+    - macGeneral/macVim.qmd
     - references.qmd
 format:
   html:

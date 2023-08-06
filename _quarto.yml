@@ -22,6 +22,8 @@ book:
     - bearings.qmd
     - fileIO.qmd
     - fileManipulation.qmd
+    - textManipulation.qmd
+    - vim.qmd
     - macGeneral/macDotFiles.qmd
     - macGeneral/macVim.qmd
     - references.qmd

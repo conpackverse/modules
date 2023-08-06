@@ -58,5 +58,11 @@
   },
   "macGeneral/macVim.qmd": {
     "macVim.html": "47e6b2be"
+  },
+  "textManipulation.qmd": {
+    "textManipulation.html": "3a96d0ad"
+  },
+  "vim.qmd": {
+    "vim.html": "7dc6c9f3"
   }
 }
