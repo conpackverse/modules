@@ -46,16 +46,19 @@ The second command above has the added advantage that it is easier to read and r
 
 The third command above was not strictly necessary. Since I only had 21 email addresses they all fit on the screen and I could have copied and pasted them into the email message I wanted to send to all candidates but instead I decided to put them all in a file and paste that file into the email. Not all email programs will allow that, though. Anyway, the third command sends its output to the file `emails.md` by using the `>` redirection operator that redirects `stdout` away from the screen and into a file. On traditional Unix systems you could also use the `>` redirection operator to redirect `stdout` to a printer attached to the computer. Since most printers today are wireless, that's not practical, but it illustrates how nearly everything in Unix can be addressed as if it were a file.
 
+## The problem of email addresses
+The question and answers at [https://stackoverflow.com/questions/2898463/using-grep-to-find-all-emails](https://stackoverflow.com/questions/2898463/using-grep-to-find-all-emails) give some idea of how difficult it would be to match *any* valid email address. In the above example, I knew that there was exactly one column of email addresses in a file arranged as a table. There were few enough email addresses that I could fit them on one screen and visually inspect them for oddities. Even so, I did not notice the underscore in one address until it was passed over by the first attempt to extract it. In school you will mostly see easy, well-formed files, but in the working world you may be surprised by all the eccentricities you will experience when trying to use externally sourced files.
+
 ## Find and replace
 There are vastly many ways to find and replace text in files, some using a combination of `grep` and `sed`, others using a combination of `find` and `sed`, still others using `awk`. Personally, I use `perl` in one of two ways.
 
-Replace old with new in .txt files:
+To replace old with new in .txt files, say
 
 ```bash
 perl -ipe 's/old/new/g;' *.txt
 ```
 
-destructive, though so you have to either do it right the first time or say
+which is destructive, though, so you have to either do it right the first time or say
 
 ```bash
 perl -i.bk -pe 's/old/new/g;' *.txt
@@ -63,6 +66,7 @@ perl -i.bk -pe 's/old/new/g;' *.txt
 
 to get backup files for each altered .txt file.
 Then check the new files and, if they're good, say `trash *.bk`.
+(Bear in mind that there's no obvious way to *undo* the programs above so, if you write a bad regular expression and you have no backups, you may find yourself in a lot of trouble.)
 
 Consider the options to this command, `i`, `p`, and `e`. To find out more about them, you might say `man perl` but you would find that it introduces you to the `perldoc` system instead of explaining them. You would actually say `perldoc perlrun` to find out their meanings.
 
@@ -80,13 +84,14 @@ while (<>) {
 
 This loop means that your program (see below) will try to run on every line of input as long as there is input and unless the output encounters a write error, in which case it will abort.
 
-The `e` option says that what comes next is a one line program.
+The `e` option says that what comes next is a program fragment, usually a one-line program.
 
 The one line program in this case is `s/old/new/g;`. Since it is enclosed in a while loop (see above) it runs on every line of input unless it encounters an error, in which case it will abort. `s` stands for substitute and you could actually write out the word substitute if it helps you remember. Next is a separator character, in the usual case it is `/` but you could substitute another character if there is a `/` in the text you want to match. For instance, I usually use `:` if there is a `/` in the input. If there is both a colon and a slash, e.g., in a URL, I usually use a `!`. Anyway, this separator character separates what I want to match (old) with what I want to replace it with (new). After the second separator, I can give options, in this case `g` for global. It is an annoying feature of the `s` command that it only replaces the first instance of `old` with `new` on each line. If `old` may occur two or more times on each line, you must use the `g` option.
 
 The last item in the program is a semicolon `;`. This is an example of what many people hate about `perl`. It is always correct to include a semicolon at the end of a statement, but `perl` will often let you get away with omitting it. This is one of those cases, so you don't really need a semicolon here but you would if you wanted to include two `perl` statements in your program fragment. The reason people hate this is because it is hard to remember the rules allowing you to omit the semicolon. `perl` was really intended to be used every day. Back in the years when I did use `perl` every day, I found it easy to remember all the idiosyncracies like that. Nowadays, not so much.
 
-After the program comes the files I want to operate on, all files ending in `.txt` by using the wildcard character `*` that matches anything in a filename. Unfortunately, there are two contexts for using `*`. In a filename on the command line it stands for *anything* but in a regular expression it stands for *zero or more occurrences of the element that preceded it*. This causes a lot of confusion for users of regular expressions!
+After the program comes the files I want to operate on, all files ending in `.txt` by using the wildcard character `*` that matches anything in a filename. Unfortunately, there are two major contexts for using `*`. One is its use in the `bash` shell, which is how it's used here. You must be able to distinguish between the `bash` shell and the utilities it invokes. In the `bash` shell, `*` is a wildcard character, which replaces any series of legal pathname or filename characters. The other major context is in utilities like `sed`, `awk`, `perl`, and `vim`, where it is used as a quantifier in regular expressions. `bash` itself has no concept of regular expressions.
+In a regular expression, the `*` stands for *zero or more occurrences of the element that preceded it*. This causes a lot of confusion for users of regular expressions and users of `bash`!
 
 ## PCRE
 

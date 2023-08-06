@@ -6,7 +6,7 @@ under construction
 
 The best starting point for vim is the `vimtutor`, which is automatically installed when you install any version of vim. Simply say `vimtutor` at the `bash` prompt and you will automatically enter a disposable copy of the vimtutor. You can edit the file you're in without disturbing the original vimtutor. So, if you have problems, you can always exit the vimtutor, for example by saying `:q!` without damaging the original file, then open it again by saying `vimtutor` again at the `bash` prompt.
 
-Another common starting point for vim is the maze game [vim adventures](https://vim-adventures.com/). Be aware, though, that if you have Tridactyl loaded in your browser, you must temporarily disable it by, for instance, saying <kbd>shift</kbd>-<kbd>esc</kbd>. 
+Another common starting point for vim is the maze game [vim adventures](https://vim-adventures.com/). Be aware, though, that if you have Tridactyl loaded in your browser, you must temporarily disable it by, for instance, saying <kbd>shift</kbd>+<kbd>esc</kbd>. 
 
 ## Basic Vim ideas
 
