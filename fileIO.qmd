@@ -1,5 +1,5 @@
 ---
-title: "Unix File I/O"
+title: "Unix File Input / Output"
 ---
 
 Standard Unix commands have three input / output concepts, STDIN, STDOUT, and STDERR. Commands read from STDIN, which is input by the keyboard by default. Commands send their output to STDOUT, which is the screen by default. Commands send their error messages to STDERR, which, again, is the screen by default. These three concepts are called IO descriptors. For convenience, when you begin to work on something, you may want it this way. But as you begin to automate your tasks, you begin to use files for input and output, and luckily you can redirect STDIN, STDOUT, and STDERR to and from files and from one command to another.

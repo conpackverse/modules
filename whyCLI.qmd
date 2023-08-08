@@ -2,5 +2,42 @@
 title: "Why CLI (command line interface)?"
 ---
 
-to be added
+under construction
+
+## Richness of options
+GUIs typically offer a subset of features of the cli version of a tool.
+
+## Audit trail
+You know or can find out what you did, both for debugging and automation / reproducibility.
+
+## Stability
+CLI tools have great backward compatibility. There is no graphical user interface to change with fashions, so the tool works the same way year in and year out. I've used some Unix cli tools with unchanged options since the 1980s!
+
+## How to get comfortable
+An obvious corollary to the question of *Why?* is how you get comfortable with the command line.
+[A recent article](https://jvns.ca/blog/2023/08/08/what-helps-people-get-comfortable-on-the-command-line-/)
+that was
+[discussed on Hacker News](https://news.ycombinator.com/item?id=37048397)
+sheds some light and can be crudely summarized by the following list:
+
+- killer apps, such as `jq`, `ripgrep`, `wget`, `curl`, `git`, `ffmpeg`, and more
+- inspiring wizardry, such as seen at [https://adamdrake.com/command-line-tools-can-be-235x-faster-than-your-hadoop-cluster.html](https://adamdrake.com/command-line-tools-can-be-235x-faster-than-your-hadoop-cluster.html) or [https://www.youtube.com/watch?v=ZQnyApKysg4&feature=youtu.be](https://www.youtube.com/watch?v=ZQnyApKysg4&feature=youtu.be)
+- the use of [explainshell](https://explainshell.com/)
+- the discovery of history and tab completion
+- the use of `fzf` the fuzzy finder
+- playing with a Raspberry Pi, where you can just erase the SD card and start over if you screw things up
+- a fancy shell setup
+- a fancy file namager, such as `ranger` or `nnn`
+- a helpful friend or coworker
+- aliases that save time and overcome the need for a lot of memorization
+- cheat sheets, such as [https://tldr.sh/](https://tldr.sh/), [https://github.com/cheat/cheat](https://github.com/cheat/cheat), or [http://ratfactor.com/cards/um](http://ratfactor.com/cards/um)
+- not trying to memorize, just looking up commands as needed
+- using Vim
+- using Linux
+- being forced for a while
+- workshops, such as those at [software carpentry](https://software-carpentry.org/)
+- articles, like [The Terminal](https://furbo.org/2014/09/03/the-terminal/) or [Command Line Kung Fu](http://blog.commandlinekungfu.com/)
+- books, like [effective linux at the command line](https://www.oreilly.com/library/view/efficient-linux-at/9781098113391/)
+- videos, like [destroy all software](https://www.destroyallsoftware.com/screencasts), [DistroTube](https://www.youtube.com/@DistroTube)
+
 
