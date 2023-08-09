@@ -12,4 +12,27 @@ The current window has three *panes*. You can tell which pane is active by the t
 
 But the most important thing about `tmux` is not its manipulation of panes and windows. There are many tools for manipulating panes and windows. By far the most important thing about it is that you can have `tmux` sessions on remote machines and those sessions will persist across sleeps and reboots of the local machine. For example, suppose I start work at home in the morning on my laptop. I use `tmux` to log into my office  machine, do some work, then shut down my laptop. I can then go to work with my laptop, turn it on and reattach to the `tmux` session on the office machine without losing any of my work. For this reason `tmux` is frequently used by people like data scientists who have to start long-running neural network jobs on remote machines and check in on those jobs every once in a while.
 
-By the way, the screenshot above is of a partially transparent screen. Behind the `tmux` window, you can see a preview of the fileIO page of this book. The transparency is controlled by the terminal emulator, iTerm, that is running `bash`, which in turn is running `tmux`.
+By the way, the screenshot above is of a partially transparent screen. Behind the `tmux` window, you can see a preview of the fileIO page of this book. The transparency is controlled by the terminal emulator, iTerm, that is running `bash`, which in turn is running `tmux`. When you want to change settings, you need to know which of several running programs is controlling those settings. Think of `tmux` as having settings that control window layout and its own statusline.
+
+There are vastly many ways that people configure `tmux` sessions, as illustrated by
+[this Stackoverflow question](https://stackoverflow.com/questions/5609192/how-do-i-set-tmux-to-open-specified-windows-at-startup)
+
+As another example of a `tmux` configuration, I have three courses and two projects, so I open `tmux` with five split windows, using a shell script containing the following:
+
+```bash
+#!/bin/bash
+tmux new-session -n i306 -c ~/courses/stats \; \
+  split-window -v -c ~/courses/stats \; \
+  new-window -n i320u -c ~/courses/infointeractdsgn/ \; \
+  split-window -v -c ~/courses/infointeractdsgn/ \; \
+  new-window -n inf385t -c ~/courses/uxproto/ \; \
+  split-window -v -c ~/courses/uxproto/ \; \
+  new-window -n cli -c ~/courses/cli \; \
+  split-window -v -c ~/courses/cli \; \
+  new-window -n dgs -c ~/research/disabledgrads/facultyStudy/ \; \
+  split-window -v -c ~/research/disabledgrads/facultyStudy/
+```
+
+All the above script does is to name five windows and change to the appropriate directory for each window. The following screenshot shows the result after running this script. The current window tab has a blue background. The others are underlined because some activity has happened in them since the last time they were in the foreground.
+
+![An example of five `tmux` windows in one session](fitmuxFiveWindows.png)
