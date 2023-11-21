@@ -23,7 +23,6 @@ book:
     - fileIO.qmd
     - fileManipulation.qmd
     - textManipulation.qmd
-    - printf.qmd
     - vim.qmd
     - macGeneral/macDotFiles.qmd
     - macGeneral/macVim.qmd

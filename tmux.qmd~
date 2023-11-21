@@ -35,4 +35,4 @@ tmux new-session -n i306 -c ~/courses/stats \; \
 
 All the above script does is to name five windows and change to the appropriate directory for each window. The following screenshot shows the result after running this script. The current window tab has a blue background. The others are underlined because some activity has happened in them since the last time they were in the foreground.
 
-![An example of five `tmux` windows in one session, the current window having two panes](fitmuxFiveWindows.png)
+![An example of five `tmux` windows in one session, current window with two panes](fitmuxFiveWindows.png)
